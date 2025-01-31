@@ -7,7 +7,7 @@
         @foreach($projects as $project)
             <div class="border-b">
                 <h2>
-                    <a href="">{{ $project->name }}</a>
+                    <a href="{{ route('projects.show', ['project' => $project->id]) }}">{{ $project->name }}</a>
                 </h2>
                 <p>{{ $project->description }}</p>
             </div>

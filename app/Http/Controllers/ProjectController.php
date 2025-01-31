@@ -29,9 +29,11 @@ class ProjectController extends Controller
         return to_route('projects.index')->with('success', 'プロジェクトを作成しました');
     }
 
+    // プロジェクト詳細ページ
     public function show(Project $project)
     {
-        //
+        $project = Project::find($project->id);
+        return view('projects.show', ['project' => $project]);
     }
 
     public function edit(Project $project)
