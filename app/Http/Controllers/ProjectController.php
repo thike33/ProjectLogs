@@ -38,12 +38,17 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', ['project' => $project]);
     }
 
-    public function update(Request $request, Project $project)
+    // プロジェクト更新機能
+    public function update(ProjectRequest $request, Project $project)
     {
-        //
+        $project = Project::find($project->id);
+        $updateData = $request->validated();
+        $project->update($updateData);
+
+        return to_route('projects.show', ['project' => $project->id])->with('success', 'プロジェクトを更新しました');
     }
 
 

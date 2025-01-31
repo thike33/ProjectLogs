@@ -8,12 +8,12 @@
             @csrf
             <div class="grid grid-cols-1">
                 <lavel for="name">プロジェクト名</lavel>
-                <input type="text" name="name" id="name" class="border">
+                <input type="text" name="name" id="name" class="border" value="{{ old('name') }}">
             </div>
 
             <div class="grid grid-cols-1">
                 <lavel for="description">説明</lavel>
-                <input type="text" name="description" id="description" class="border">
+                <input type="text" name="description" id="description" class="border" value="{{ old('description') }}">
             </div>
 
             <div class="text-center">
