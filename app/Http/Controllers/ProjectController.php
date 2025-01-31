@@ -36,6 +36,7 @@ class ProjectController extends Controller
         return view('projects.show', ['project' => $project]);
     }
 
+    // プロジェクト編集ページ
     public function edit(Project $project)
     {
         return view('projects.edit', ['project' => $project]);
@@ -52,8 +53,12 @@ class ProjectController extends Controller
     }
 
 
+    // プロジェクト削除機能
     public function destroy(Project $project)
     {
-        //
+        $project = Project::find($project->id);
+        $project->delete();
+
+        return to_route('projects.index')->with('success', 'プロジェクトを削除しました');
     }
 }

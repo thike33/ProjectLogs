@@ -1,6 +1,6 @@
 <header class="flex justify-between items-center border-b p-5">
     <p>
-        <a href="" class="font-bold">トップ</a>
+        <a href="{{ route('top') }}" class="font-bold">トップ</a>
     </p>
     <ul class="flex items-center gap-5">
         <li>
