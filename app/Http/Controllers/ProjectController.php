@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateProjectRequest;
+use App\Http\Requests\ProjectRequest;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -21,7 +21,7 @@ class ProjectController extends Controller
     }
 
     // プロジェクト作成機能
-    public function store(CreateProjectRequest $request)
+    public function store(ProjectRequest $request)
     {
         $validated = $request->validated();
         Project::create($validated);
